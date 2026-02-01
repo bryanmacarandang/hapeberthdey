@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Surprise | [JAS]</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <div class="bg-pattern"></div>
+    <div class="bg-shimmer"></div>
+
+    <div class="card-container" id="cardContainer">
+        <div id="p1" class="page active">
+            <div class="crystal-facet"></div>
+            <img src="nailong.png" alt="Nailong" class="nailong-img">
+            <h1 class="crystal-text"> Sungit!</h1>
+            <p>HAPPY BIRTHDAY JAS! <br>
+             ANG TANDA MO NA TEH!</p>
+            <button onclick="nextPage(2)"> !THE END! </button>
+        </div>
+
+        <div id="p2" class="page upcoming">
+            <h2 class="Happy" style="color: blue;">Happy Birthday Jasmin!</h2>
+             <img src="pic.png" alt="Nailong" class="nailong-img">
+            <div class="message-box">
+                <p> 
+                I just want to thank you for everything—for always listening to my chika, and for all our kulitan, pikunan, tawanan, and our friendship. <br> 
+                I know you struggle sometimes and get burned out because of school or other things, 
+                but always remember that you have a Bryan by your side to support and listen to you.
+                I hope all your dreams come true. Future RN, Jasmin Marie Cadag!
+                </p>
+            </div>
+            <div class="ice-shards">🐋🐋🐋</div>
+            <button onclick="nextPage(3)">One More Thing...</button>
+        </div>
+
+        <div id="p3" class="page upcoming">
+            <img src="nailong2.png" alt="Nailong" class="nailong-img mini">
+            <h1 class="crystal-text">WISH WISH WISH </h1>
+            <button id="confettiBtn">Shatter & Celebrate!</button>
+            <button onclick="nextPage(1)" class="btn-restart">Replay</button>
+        </div>
+
+        <div class="nav-dots">
+            <div id="d1" class="dot active"></div>
+            <div id="d2" class="dot"></div>
+            <div id="d3" class="dot"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

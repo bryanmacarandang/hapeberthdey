@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+:root {
+  /* Fix: Correcting your variable names to ensure they work in the classes below */
+  --primary-yellow: #FFE135;  /* Nailong's signature warmth */
+  --deep-blue: #00509D;       /* Deep contrast blue */
+  --accent-gold: #FFD500;     /* For text and high-lights */
+  --soft-white: #f7faff;      /* Clean 2026 UI standard */
+  --glass-bg: rgba(255, 255, 255, 0.15);
+}
+
+body, html {
+  margin: 0; padding: 0; height: 100%; width: 100%;
+  font-family: "Lucida Console", "Courier New", monospace;
+  line-height: 1.0;
+  color: #555; /* Makes it look more like ink */
+  /* Optimization: Using a 3-point gradient prevents the "muddy green" middle */
+  background: radial-gradient(circle at center, var(--primary-yellow) 0%, #76B4CF 50%, var(--deep-blue) 100%);
+  display: flex; align-items: center; justify-content: center;
+  color: rgb(1, 115, 247); overflow: hidden;
+}
+
+.Happy{
+  margin-top: 80px;
+  font-size: 20px;
+}
+
+/* Crystal Background Effects */
+.bg-pattern {
+  position: absolute; width: 100%; height: 100%;
+  background: repeating-conic-gradient(from 0deg, rgba(255,255,255,0.05) 0deg 30deg, transparent 30deg 60deg);
+  z-index: 1;
+}
+
+.bg-shimmer {
+  position: absolute; width: 100%; height: 100%;
+  background: linear-gradient(-45deg, transparent 45%, rgba(255,255,255,0.2) 50%, transparent 55%);
+  background-size: 300% 300%;
+  animation: shimmer 10s infinite linear;
+  z-index: 2;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 100% ; }
+}
+
+/* Card Container */
+.card-container {
+  position: relative; z-index: 10;
+  width: 90%; max-width: 360px; height: 500px;
+  perspective: 1500px;
+}
+
+.page {
+  position: absolute; width: 100%; height: 100%;
+  background: var(--glass-bg);
+  backdrop-filter: blur(25px) saturate(160%);
+  -webkit-backdrop-filter: blur(25px) saturate(160%);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 24px; /* Slightly rounder for the "puffy" trend */
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center; padding: 30px; box-sizing: border-box;
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+.active { transform: rotateY(0) scale(1); opacity: 1; }
+.hidden { transform: rotateY(-90deg) scale(0.8); opacity: 0; pointer-events: none; }
+.upcoming { transform: rotateY(90deg) scale(0.8); opacity: 0; pointer-events: none; }
+
+/* Nailong Visuals */
+.nailong-img {
+  width: 150px; margin-bottom: 20px;
+  filter: drop-shadow(0 0 15px rgba(255, 235, 59, 0.4));
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* Typography & Buttons */
+.crystal-text {
+  text-shadow: 0 0 10px rgba(255,255,255,0.5);
+  letter-spacing: 1px;
+}
+
+.text-yellow { 
+  color: var(--primary-yellow); 
+  text-shadow: 0 0 10px rgba(255,235,59,0.5); 
+}
+
+button {
+  margin-top: 20px; padding: 14px 32px;
+  border: none; border-radius: 12px;
+  background: var(--soft-white); 
+  color: var(--deep-blue); /* Accessibility: dark blue text is easier to read */
+  font-weight: bold; cursor: pointer;
+  transition: 0.3s; text-transform: uppercase;
+}
+
+button:hover { 
+  background: var(--primary-yellow); 
+  transform: scale(1.05); 
+  box-shadow: 0 0 20px rgba(255, 225, 53, 0.6); /* Soft glow hover */
+}
+
+.btn-restart { background: transparent; border: 1px solid white; color: white; }
+
+/* Navigation */
+.nav-dots {
+  position: absolute; bottom: -40px; width: 100%;
+  display: flex; justify-content: center; gap: 8px;
+}
+
+.dot { width: 8px; height: 8px; background: rgba(255,255,255,0.3); border-radius: 50%; }
+
+.dot.active { 
+  background: var(--primary-yellow); 
+  width: 24px; 
+  border-radius: 10px; 
+}
